@@ -7,26 +7,24 @@
 </template>
 
 <script setup lang="ts">
-const token = useCookie<string>("token");
-if (token.value) {
+import { useUserStore } from "~~/stores/userStore";
+
+if (useUserStore().token) {
     console.log("Token is set");
 } else {
     console.log("Token is not set");
 }
 
 const setToken = () => {
-    token.value = "sadasd.asdasd.asdasd";
-    console.log(token.value); // sadasd.asdasd.asdasd
+    useUserStore().setToken("sadasd.asdasd.asdasd");
 };
 
 const removeToken = () => {
-    token.value = "";
-    console.log(token.value);
+    useUserStore().logout();
 };
 
 const login = () => {
-    token.value = "sadasd.asdasd.asdasd";
-    console.log(token.value); // sadasd.asdasd.asdasd
+    useUserStore().login();
     navigateTo("/dashboard");
 };
 </script>

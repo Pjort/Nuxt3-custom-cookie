@@ -1,11 +1,12 @@
 <script setup lang="ts">
-const token = useCookie<string>("token");
+import { useUserStore } from "~~/stores/userStore";
+
+const token = useUserStore().token;
 
 const logout = () => {
-    token.value = "";
-    console.log(token.value);
-    navigateTo("/");
+    useUserStore().logout();
 };
+
 definePageMeta({
     middleware: ["auth"],
     // or middleware: 'auth'
