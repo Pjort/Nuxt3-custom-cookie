@@ -11,6 +11,8 @@ RUN npm install && npm cache clean --force
 
 COPY . .
 
+RUN npm run build
+
 ENV TZ="Europe/Copenhagen"
 ENV PORT=3000
 ENV HOST=0.0.0.0
