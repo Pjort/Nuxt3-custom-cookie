@@ -40,3 +40,6 @@ npm run preview
 ```
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+
+Authorize link:
+https://authorizer-production-6614.up.railway.app/oauth_login/github?redirectURL=http://localhost:3000&scope=offline_access&state=randomstate
